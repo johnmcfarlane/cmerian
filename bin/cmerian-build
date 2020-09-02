@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+# Run to build targets in the working directory.
+
+set -euo pipefail
+
+BITS_DIR=$(cd "$(dirname "$0")/cmerian-bits"; pwd)
+
+PROJECT_DIR="$1"
+shift
+
+"${BITS_DIR}/init" "${PROJECT_DIR}"
+
+"${BITS_DIR}/config" \
+  "${PROJECT_DIR}" \
+  "$@"
+
+"${BITS_DIR}/build"

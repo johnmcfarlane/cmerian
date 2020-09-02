@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+# Run to build targets in the working directory.
+
+set -euo pipefail
+
+BIN_DIR=$(cd "$(dirname "$0")"; pwd)
+
+COMMAND="$1"
+shift
+
+"${BIN_DIR}/cmerian-${COMMAND}" "$@"

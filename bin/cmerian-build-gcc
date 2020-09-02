@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+# Run to build targets in the working directory.
+
+set -euo pipefail
+
+BIN_DIR=$(cd "$(dirname "$0")"; pwd)
+
+"${BIN_DIR}/cmerian-build" \
+  "$@" \
+  -DCMAKE_TOOLCHAIN_FILE="${BIN_DIR}"/cmerian-bits/toolchains/gcc.cmake

@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+# to build targets; run after config and before tests
+
+set -exuo pipefail
+
+NUM_CPUS=$(nproc)
+
+cmake \
+  --build . \
+  "$@" \
+    -- \
+    --jobs "${NUM_CPUS}"

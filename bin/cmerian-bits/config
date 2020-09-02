@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+# to configure build system; run after init and before build
+
+set -euo pipefail
+
+PROJECT_DIR=$(cd "$(dirname "$0")"/../..; pwd)
+
+cmake \
+  "$@" \
+  "${PROJECT_DIR}"

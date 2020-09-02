@@ -1,0 +1,3 @@
+BIN_DIR=$(cd "$(dirname "$0")"/..; pwd)
+# export PATH="$PATH:$BIN_DIR"
+echo $@
